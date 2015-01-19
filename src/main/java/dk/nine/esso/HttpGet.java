@@ -4,7 +4,7 @@ import java.net.URI;
 
 import org.apache.http.client.methods.HttpPost;
 
-public class HttpGet extends HttpPost {
+class HttpGet extends HttpPost {
 	public final static String METHOD_NAME = "GET";
 
 	public HttpGet(URI url) {
