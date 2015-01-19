@@ -1,0 +1,8 @@
+cluster.name: "ESSO-TEST-CLUSTER"
+node.name: "esso-test-node"
+node.master: true
+node.data: true
+path.data: target/elasticsearch
+path.logs: target/elasticsearch
+index.store.type: memory
+

@@ -1,0 +1,17 @@
+{
+	"actions": [
+		{
+			"remove": {
+				"index": "${fromIndex}",
+				"alias": "${alias}"
+			}
+		},
+		{
+			"add": {
+				"index": "${toIndex}",
+				"alias": "${alias}"
+			}
+		}
+	]
+}
+
