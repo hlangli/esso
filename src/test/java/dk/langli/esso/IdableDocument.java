@@ -1,4 +1,6 @@
-package dk.nine.esso;
+package dk.langli.esso;
+
+import dk.langli.esso.Idable;
 
 public class IdableDocument extends Document implements Idable {
 	@Override

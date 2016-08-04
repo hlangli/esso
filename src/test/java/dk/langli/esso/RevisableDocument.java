@@ -1,4 +1,6 @@
-package dk.nine.esso;
+package dk.langli.esso;
+
+import dk.langli.esso.Revisable;
 
 public class RevisableDocument extends IdableDocument implements Revisable {
 	@Override

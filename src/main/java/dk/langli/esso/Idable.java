@@ -1,4 +1,4 @@
-package dk.nine.esso;
+package dk.langli.esso;
 
 public interface Idable {
 	public String get_id();

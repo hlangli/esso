@@ -1,4 +1,4 @@
-package dk.nine.esso;
+package dk.langli.esso;
 
 import java.util.List;
 
@@ -8,6 +8,9 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
+
+import dk.langli.esso.Esso;
+import dk.langli.esso.EssoException;
 
 public class EssoTest {
 	private static final Node node = new NodeBuilder().local(true).node();

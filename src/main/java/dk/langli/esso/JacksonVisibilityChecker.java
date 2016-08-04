@@ -1,4 +1,4 @@
-package dk.nine.esso;
+package dk.langli.esso;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Member;

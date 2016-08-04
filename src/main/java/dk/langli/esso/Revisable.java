@@ -1,4 +1,4 @@
-package dk.nine.esso;
+package dk.langli.esso;
 
 public interface Revisable extends Idable {
 	public Long get_version();

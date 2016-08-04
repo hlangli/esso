@@ -1,4 +1,4 @@
-package dk.nine.esso;
+package dk.langli.esso;
 
 @SuppressWarnings("serial")
 public class EssoException extends Exception {

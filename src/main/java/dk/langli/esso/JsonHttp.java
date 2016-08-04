@@ -1,4 +1,4 @@
-package dk.nine.esso;
+package dk.langli.esso;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

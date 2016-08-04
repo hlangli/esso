@@ -1,4 +1,4 @@
-package dk.nine.esso;
+package dk.langli.esso;
 
 public class Document {
 	private String id = null;
