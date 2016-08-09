@@ -3,6 +3,8 @@ package dk.langli.esso;
 import java.util.List;
 import java.util.Map;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 public class Esso<T> {
 	private Class<T> mappedType = null;
 	private GeneralEsso esso = null;
@@ -14,7 +16,15 @@ public class Esso<T> {
 		esso = new GeneralEsso(url, true);
 	}
 	
-	public void setTransactional(boolean transactional) {
+	public void setObjectMapper(ObjectMapper objectMapper) {
+        esso.setObjectMapper(objectMapper);
+    }
+
+    public ObjectMapper getObjectMapper() {
+        return esso.getObjectMapper();
+    }
+
+    public void setTransactional(boolean transactional) {
 		esso.setTransactional(transactional);
 	}
 

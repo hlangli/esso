@@ -30,7 +30,7 @@ import com.fasterxml.jackson.databind.introspect.VisibilityChecker;
 public class GeneralEsso {
 	private static String SWITCH_ALIAS_DSL = null;
 	private JsonHttp http = null;
-	private ObjectMapper mapper = new ObjectMapper();
+	private ObjectMapper mapper;
 	private boolean transactional = false;
 
 	public GeneralEsso(String url, boolean transactional) throws EssoException {
@@ -44,17 +44,26 @@ public class GeneralEsso {
 		catch(IOException e) {
 			wrap(e);
 		}
-		mapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX"));
-		mapper.setVisibilityChecker(new JacksonVisibilityChecker());
-		SerializationConfig serializationConfig = mapper.getSerializationConfig();
-		VisibilityChecker<JacksonVisibilityChecker> jacksonVisibilityChecker = new JacksonVisibilityChecker();
-		jacksonVisibilityChecker = jacksonVisibilityChecker.with(JsonAutoDetect.Visibility.NONE);
-		jacksonVisibilityChecker = jacksonVisibilityChecker.withFieldVisibility(JsonAutoDetect.Visibility.NONE);
-		jacksonVisibilityChecker = jacksonVisibilityChecker.withGetterVisibility(JsonAutoDetect.Visibility.PUBLIC_ONLY);
-		jacksonVisibilityChecker = jacksonVisibilityChecker.withSetterVisibility(JsonAutoDetect.Visibility.PUBLIC_ONLY);
-		jacksonVisibilityChecker = jacksonVisibilityChecker.withCreatorVisibility(JsonAutoDetect.Visibility.NONE);
-		serializationConfig.with(jacksonVisibilityChecker);
+		setObjectMapper(new ObjectMapper());
 		setTransactional(transactional);
+	}
+	
+	public void setObjectMapper(ObjectMapper objectMapper) {
+	    this.mapper = objectMapper;
+	    mapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX"));
+        mapper.setVisibilityChecker(new JacksonVisibilityChecker());
+        SerializationConfig serializationConfig = mapper.getSerializationConfig();
+        VisibilityChecker<JacksonVisibilityChecker> jacksonVisibilityChecker = new JacksonVisibilityChecker();
+        jacksonVisibilityChecker = jacksonVisibilityChecker.with(JsonAutoDetect.Visibility.NONE);
+        jacksonVisibilityChecker = jacksonVisibilityChecker.withFieldVisibility(JsonAutoDetect.Visibility.NONE);
+        jacksonVisibilityChecker = jacksonVisibilityChecker.withGetterVisibility(JsonAutoDetect.Visibility.PUBLIC_ONLY);
+        jacksonVisibilityChecker = jacksonVisibilityChecker.withSetterVisibility(JsonAutoDetect.Visibility.PUBLIC_ONLY);
+        jacksonVisibilityChecker = jacksonVisibilityChecker.withCreatorVisibility(JsonAutoDetect.Visibility.NONE);
+        serializationConfig.with(jacksonVisibilityChecker);
+	}
+	
+	public ObjectMapper getObjectMapper() {
+	    return mapper;
 	}
 	
 	@SuppressWarnings("unchecked")
