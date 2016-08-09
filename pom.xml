@@ -2,18 +2,26 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.github.jinahya</groupId>
+		<artifactId>ossrh-parent</artifactId>
+		<version>0.8.2</version>
+	</parent>
 	<groupId>dk.langli</groupId>
 	<artifactId>esso</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Esso</name>
 	<description>ElasticSearch object mapping framework</description>
+	<url>https://github.com/inzpektor/esso</url>
 	<developers>
 		<developer>
 			<id>hsl</id>
 			<name>Henrik Stig Langli</name>
 			<email>henrik@langli.dk</email>
 			<timezone>+01:00</timezone>
+			<organization></organization>
+			<organizationUrl>https://github.com/inzpektor</organizationUrl>
 		</developer>
 	</developers>
 	<licenses>
@@ -22,6 +30,11 @@
 			<url>http://www.gnu.org/licenses/lgpl.txt</url>
 		</license>
 	</licenses>
+	<scm>
+		<connection>scm:git:git://github.com/inzpektor/esso.git</connection>
+		<developerConnection>scm:git:ssh://github.com:inzpektor/esso.git</developerConnection>
+		<url>https://github.com/inzpektor/esso</url>
+	</scm>
 	<properties>
 		<org.slf4j.slf4j-api.version>1.7.7</org.slf4j.slf4j-api.version>
 		<org.apache.logging.log4j.log4j-core.version>2.0.2</org.apache.logging.log4j.log4j-core.version>
