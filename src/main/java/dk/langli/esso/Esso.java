@@ -15,6 +15,14 @@ public class Esso<T> {
 		type = mappedType.getSimpleName();
 		esso = new GeneralEsso(url, true);
 	}
+
+    public GeneralEsso getGeneralEsso() {
+        return esso;
+    }
+    
+	public void setGeneralEsso(GeneralEsso esso) {
+	    this.esso = esso;
+	}
 	
 	public void setObjectMapper(ObjectMapper objectMapper) {
         esso.setObjectMapper(objectMapper);
